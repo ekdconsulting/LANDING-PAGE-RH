@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert RH & Coach - Reconversion & Retour à l'Emploi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #2c5f7c 0%, #3a7ca5 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .hero .experience {
+            font-size: 2em;
+            font-weight: 700;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            background: #d4a574;
+            color: white;
+            padding: 18px 45px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 30px;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(212, 165, 116, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212, 165, 116, 0.6);
+            background: #c4955f;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        .section h2 {
+            font-size: 2.5em;
+            color: #2c5f7c;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #d4a574;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .expertise-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid #3a7ca5;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .expertise-card h3 {
+            color: #2c5f7c;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+        
+        .expertise-card p {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .rh-expertise {
+            background: linear-gradient(135deg, #5f9ea0 0%, #4a8b8d 100%);
+            padding: 60px 20px;
+            margin: 60px 0;
+            color: white;
+        }
+        
+        .rh-expertise h2 {
+            color: white;
+        }
+        
+        .rh-expertise h2::after {
+            background: white;
+        }
+        
+        .rh-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+        
+        .rh-item {
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            color: #2c3e50;
+        }
+        
+        .rh-item .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .rh-item h4 {
+            color: #2c5f7c;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .rh-item p {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        .differentiators {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e8ec 100%);
+            padding: 60px 20px;
+            margin: 60px 0;
+        }
+        
+        .diff-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+        
+        .diff-item {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .diff-item .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .diff-item h4 {
+            color: #2c5f7c;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .target-profiles {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+        
+        .target-profiles ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .target-profiles li {
+            padding: 20px;
+            margin: 15px 0;
+            background: #f8f9fa;
+            border-left: 5px solid #d4a574;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .target-profiles li:hover {
+            background: #fff8f0;
+            transform: translateX(10px);
+        }
+        
+        .recruitment-focus {
+            background: linear-gradient(135deg, #d4a574 0%, #c4955f 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .recruitment-focus h2 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+        }
+        
+        .recruitment-focus h2::after {
+            background: white;
+        }
+        
+        .recruitment-highlight {
+            background: rgba(255,255,255,0.15);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 30px auto;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+        
+        .testimonial {
+            background: #2c5f7c;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.3em;
+            margin: 60px 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #5f9ea0 0%, #4a8b8d 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            font-size: 2.8em;
+            margin-bottom: 25px;
+        }
+        
+        .cta-section h2::after {
+            background: white;
+        }
+        
+        .cta-section p {
+            font-size: 1.3em;
+            margin-bottom: 35px;
+        }
+        
+        .cta-secondary {
+            display: inline-block;
+            background: white;
+            color: #2c5f7c;
+            padding: 18px 45px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            background: #f8f9fa;
+        }
+        
+        .contact-info {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .hero .experience {
+                font-size: 1.5em;
+            }
+            
+            .section h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Réussissez Votre Reconversion Professionnelle</h1>
+        <p class="subtitle">Experte RH & Coach Spécialisée en Transition de Carrière</p>
+        <div class="experience">✨ 20 ANS D'EXPERTISE RH ✨</div>
+        <p style="font-size: 1.2em; margin-top: 20px;">Recrutement • Formation • Paie • Relations Sociales</p>
+        <p style="font-size: 1.15em; margin-top: 10px;">TPE • PME • Groupes Internationaux | Tous Secteurs</p>
+        <a href="#contact" class="cta-primary">Réservez Votre Entretien Découverte</a>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Vous Êtes au Bon Endroit Si...</h2>
+            <div class="target-profiles">
+                <ul>
+                    <li>🎯 <strong>Vous êtes en questionnement professionnel</strong> et cherchez votre nouvelle voie</li>
+                    <li>🔄 <strong>Vous envisagez une reconversion</strong> mais ne savez pas par où commencer</li>
+                    <li>💼 <strong>Vous souhaitez travailler votre posture professionnelle</strong> pour gagner en impact et crédibilité</li>
+                    <li>🚀 <strong>Vous cherchez à retrouver le marché de l'emploi</strong> avec une stratégie gagnante</li>
+                    <li>📝 <strong>Vous devez préparer vos entretiens d'embauche</strong> pour maximiser vos chances</li>
+                    <li>⭐ <strong>Vous voulez révéler votre plein potentiel</strong> et vous dépasser en restant aligné avec vos valeurs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="recruitment-focus">
+        <div class="container">
+            <h2>🎯 Mon Atout Différenciant : L'Expertise Recrutement</h2>
+            <div class="recruitment-highlight">
+                <p><strong>Je ne me contente pas de vous coacher, je vous prépare comme un recruteur préparait ses candidats.</strong></p>
+                <p style="margin-top: 20px;">Grâce à mes 20 ans d'expérience en recrutement dans tous types d'entreprises, je connais parfaitement :</p>
+                <p style="margin-top: 15px;">✓ Ce que recherchent VRAIMENT les recruteurs<br>
+                ✓ Les questions pièges et comment y répondre<br>
+                ✓ Comment structurer votre discours pour convaincre<br>
+                ✓ Les codes de chaque secteur et taille d'entreprise<br>
+                ✓ Comment valoriser votre profil selon le poste visé</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Mon Accompagnement Complet</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h3>🎯 Repositionnement Professionnel</h3>
+                    <p>Clarification de votre projet, identification de vos compétences transférables, définition de votre nouvelle trajectoire et construction d'un plan d'action concret pour votre reconversion.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>💪 Travail de Posture & Leadership</h3>
+                    <p>Développement de votre impact professionnel, affirmation de soi, communication assertive, gestion du stress et des émotions pour aborder sereinement votre transition.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>🔍 Stratégie Retour à l'Emploi</h3>
+                    <p>Optimisation CV et profil LinkedIn, ciblage d'entreprises stratégiques, activation de votre réseau, techniques de recherche d'emploi efficaces adaptées à votre profil.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>🎤 Préparation Entretiens</h3>
+                    <p>Entraînement intensif aux entretiens, simulation de situations réelles, décryptage des attentes, travail sur vos réponses, votre pitch et votre storytelling professionnel.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>🌟 Révélation de Potentiel</h3>
+                    <p>Exploration de vos talents cachés, identification de vos forces différenciantes, dépassement de vos blocages, alignement entre aspirations et réalité professionnelle.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>🤝 Mise en Relation Ciblée</h3>
+                    <p>Connexion avec des entreprises adaptées à votre profil, organismes de formation pertinents, activation de mon réseau professionnel étendu pour accélérer votre projet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rh-expertise">
+        <div class="container">
+            <h2>🏆 Mes 20 Ans d'Expertise RH à Votre Service</h2>
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 40px;">Une maîtrise complète de tous les pôles RH pour un accompagnement 360°</p>
+            <div class="rh-grid">
+                <div class="rh-item">
+                    <span class="icon">👥</span>
+                    <h4>Recrutement</h4>
+                    <p>Expertise poussée en sourcing, évaluation de profils, conduite d'entretiens, négociation. Je sais ce que cherchent les recruteurs car j'en suis une.</p>
+                </div>
+                <div class="rh-item">
+                    <span class="icon">📚</span>
+                    <h4>Formation</h4>
+                    <p>Connaissance approfondie des dispositifs de formation, CPF, bilans de compétences, VAE. Je vous oriente vers les bonnes formations.</p>
+                </div>
+                <div class="rh-item">
+                    <span class="icon">💰</span>
+                    <h4>Paie & Administration</h4>
+                    <p>Maîtrise des aspects contractuels, bulletins de paie, droits sociaux pour vous conseiller en toute connaissance de cause.</p>
+                </div>
+                <div class="rh-item">
+                    <span class="icon">🤝</span>
+                    <h4>Relations Sociales</h4>
+                    <p>Expérience en dialogue social, négociation, gestion des instances représentatives du personnel dans tous types de structures.</p>
+                </div>
+                <div class="rh-item">
+                    <span class="icon">📊</span>
+                    <h4>Gestion de Projets RH</h4>
+                    <p>Pilotage de projets de transformation, déploiement d'outils, conduite du changement dans des contextes variés.</p>
+                </div>
+                <div class="rh-item">
+                    <span class="icon">⚡</span>
+                    <h4>Communication RH</h4>
+                    <p>Expertise en communication interne, marque employeur, gestion de la réputation professionnelle et personal branding.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="differentiators">
+        <div class="container">
+            <h2 style="color: #2c5f7c;">Ce Qui Me Rend Unique</h2>
+            <div class="diff-list">
+                <div class="diff-item">
+                    <div class="icon">🎓</div>
+                    <h4>Double Expertise RH + Coach</h4>
+                    <p>Vision stratégique du recruteur alliée à l'écoute et aux outils du coach pour un accompagnement complet</p>
+                </div>
+                <div class="diff-item">
+                    <div class="icon">🌐</div>
+                    <h4>Connaissance Multi-Secteurs</h4>
+                    <p>TPE, PME, multinationales - je connais les codes, cultures et attentes de tous les environnements</p>
+                </div>
+                <div class="diff-item">
+                    <div class="icon">🔗</div>
+                    <h4>Réseau Professionnel Actif</h4>
+                    <p>Connexions directes avec DRH, dirigeants, managers et organismes de formation pour concrétiser vos projets</p>
+                </div>
+                <div class="diff-item">
+                    <div class="icon">💡</div>
+                    <h4>Vision Recruteur Insider</h4>
+                    <p>Je sais exactement ce qui fait la différence dans un CV, un entretien, une négociation - vous avez une longueur d'avance</p>
+                </div>
+                <div class="diff-item">
+                    <div class="icon">⚡</div>
+                    <h4>Adaptabilité Totale</h4>
+                    <p>Accompagnement sur-mesure selon votre profil, secteur, niveau d'expérience et phase de transition</p>
+                </div>
+                <div class="diff-item">
+                    <div class="icon">🎯</div>
+                    <h4>Approche Opérationnelle</h4>
+                    <p>Pas de théorie abstraite : des conseils concrets, actionnables immédiatement pour des résultats rapides</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Ma Méthode Éprouvée en 3 Étapes</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h3>1️⃣ Diagnostic & Clarification</h3>
+                    <p>Analyse approfondie de votre parcours, compétences, aspirations et contraintes. Identification de vos forces et axes de développement pour définir ensemble votre cap professionnel.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>2️⃣ Stratégie & Préparation</h3>
+                    <p>Construction de votre plan d'action personnalisé, optimisation de vos outils (CV, LinkedIn), travail de votre posture et préparation intensive aux entretiens avec simulations réelles.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>3️⃣ Action & Accompagnement</h3>
+                    <p>Mise en œuvre de votre stratégie, activation de mon réseau, ajustements en temps réel, soutien continu jusqu'à la concrétisation de votre projet professionnel.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial">
+        <div class="container">
+            <p>"Après 20 ans en RH à recruter, former et accompagner des talents dans tous types d'entreprises, je mets mon expertise terrain au service de VOTRE réussite. Je ne vous coache pas depuis la théorie : je vous guide avec les clés qui font vraiment la différence."</p>
+            <p style="margin-top: 30px; font-style: normal; font-weight: 600;">— Votre Alliée Experte pour Votre Transformation Professionnelle</p>
+        </div>
+    </div>
+
+    <div class="cta-section" id="contact">
+        <div class="container">
+            <h2>Prêt(e) à Réussir Votre Transition ?</h2>
+            <p>Réservez dès maintenant votre entretien découverte gratuit de 30 minutes</p>
+            <p style="font-size: 1.1em; margin-bottom: 35px;">Sans engagement • 100% confidentiel • Premiers conseils personnalisés offerts</p>
+            <a href="mailto:ekd.insightconsulting@gmail.com" class="cta-secondary">📧 Contactez-moi Maintenant</a>
+            <p style="margin-top: 40px; font-size: 1.1em;">☎️ Ou appelez-moi directement au : <strong><a href="tel:+33757821783" style="color: white; text-decoration: none;">07 57 82 17 83</a></strong></p>
+        </div>
+    </div>
+
+    <div class="contact-info">
+        <div class="container">
+            <p style="font-size: 1.1em; margin-bottom: 15px;">📍 Basée en Rhône-Alpes | Accompagnement en présentiel et à distance</p>
+            <p>Interventions possibles dans toute la France</p>
+        </div>
+    </div>
+</body>
+</html>
